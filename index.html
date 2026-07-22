@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolle</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header" >
+    <h1>Bienvenido a Futbolle</h1>
+    <nav class="nav" >
+        <a class="nav-link" href="index.html">Jugar</a>
+        <a class="nav-link" href="contacto.html">Contacto</a>
+    </nav>
+</header>
+<main>
+    <section class="configuracionJuego">
+        <label for="nombreJugador">Tu nombre</label>
+        <input type="text" id="nombreJugador" placeholder="Ingresa tu nombre">
+        <label for="dificultad">Dificultad</label>
+        <select id="dificultad" >
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+        </select>
+        <button type="button" id="btnComenzar">Comenzar partida</button>
+    </section>
+
+    <section class="juego oculto" id="seccionJuego">
+        <div class="barraEstado">
+            <span id="contadorIntentos">Intentos Restantes: 8</span>
+            <span id="cronometro">00:00</span> 
+            <button type="button" id="btnReiniciar">Reiniciar Partida</button>
+            <button type="button" id="btnHistorial">Historial</button>
+        </div>
+        <div class="buscador">
+            <input type="text" id="inputBusqueda" placeholder="Escribi el nombre de un jugador">
+            <ul class="ListaSugerencias oculto" id="ListaSugerencias"></ul>
+        </div>
+        <div class="encabezadoTablero">
+            <span class="celdaEncabezado">Nombre</span>
+            <span class="celdaEncabezado">Nacionalidad</span>
+            <span class="celdaEncabezado">Club</span>
+            <span class="celdaEncabezado">Posicion</span>
+            <span class="celdaEncabezado">Edad</span>
+            <span class="celdaEncabezado">Overall</span>
+            <span class="celdaEncabezado">Altura</span>
+        </div>
+        <div class="tableroIntentos" id="tableroIntentos"></div>
+    </section>
+
+</main>
+<footer>
+
+</footer>
+
+<div class="capaModal oculto" id="modalOverlay">
+    <div class="cajaModal">
+        <h2 id="modalTitulo"></h2>
+        <div id="modalCuerpo"></div>
+        <button type="button" id="btnCerrarModal">Cerrar</button>
+    </div>
+</div>
+
+<div class="capaModal oculto" id="modalHistorialOverlay">
+    <div class="cajaModal">
+        <h2>Historial de partidas</h2>
+        <div class="barraOrdenar">
+            <button type="button" id="btnOrdenarFecha">Ordenar por fecha</button>
+            <button type="button" id="btnOrdenarIntentos">Ordenar por intentos</button>
+        </div>
+        <ul id="listaHistorial"></ul>
+        <button type="button" id="btnCerrarHistorial">Cerrar</button>
+    </div>
+</div>
+
+</body>
+</html>

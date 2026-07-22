@@ -1,0 +1,180 @@
+:root {
+    --color-primario: #1e824c;
+    --color-texto: #1a1a1a;
+    --color-texto-claro: #ffffff;
+    --color-peligro: #d42511;
+    --color-neutro: #7f8c8d;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+input, select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-texto);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+button {
+    padding: 1rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+}
+
+.nav{
+    display: flex;
+    gap: 1rem;
+}
+
+.configuracionJuego {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 24rem;
+    width: 100%;
+}
+
+.juego{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 55rem;
+}
+
+.barraEstado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.buscador{
+    position: relative;
+}
+
+.listaSugerencias{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-texto-claro);
+    border: 1px solid var(--color-primario);
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+.itemSugerencia {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.itemSugerencia:hover{
+    background-color: #dedcdc;
+}
+
+.encabezadoTablero{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.celdaEncabezado {
+    flex: 1 1 6rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.tableroIntentos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+.filaIntento{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.35rem;
+}
+
+.celda {
+    display: flex;
+    flex: 1 1 6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--color-texto-claro);
+}
+.celdaCoincide {
+    background-color: var(--color-primario);
+}
+.celdaNoCoincide {
+    background-color: var(--color-peligro);
+}
+.celdaNeutra {
+    background-color: var(--color-neutro);
+}
+
+
+.capaModal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.cajaModal{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--color-texto-claro);
+    color: var(--color-texto);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 26rem;
+}
+
+.barraOrdenar {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.oculto {
+    display: none;
+}
