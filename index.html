@@ -16,7 +16,7 @@
     </nav>
 </header>
 <main>
-    <section class="configuracionJuego">
+    <section class="configuracionJuego" id="configuracionJuego">
         <label for="nombreJugador">Tu nombre</label>
         <input type="text" id="nombreJugador" placeholder="Ingresa tu nombre">
         <label for="dificultad">Dificultad</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="buscador">
             <input type="text" id="inputBusqueda" placeholder="Escribi el nombre de un jugador">
-            <ul class="ListaSugerencias oculto" id="ListaSugerencias"></ul>
+            <ul class="listaSugerencias oculto" id="listaSugerencias"></ul>
         </div>
         <div class="encabezadoTablero">
             <span class="celdaEncabezado">Nombre</span>
@@ -75,6 +75,9 @@
         <button type="button" id="btnCerrarHistorial">Cerrar</button>
     </div>
 </div>
+
+<script src="js/api.js"></script>
+<script src="js/juego.js"></script>
 
 </body>
 </html>
