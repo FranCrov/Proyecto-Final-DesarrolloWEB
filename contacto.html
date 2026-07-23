@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="header" >        
+    <h1>Contacto</h1>
+    <nav class="nav" >
+        <a class="nav-link" href="index.html">Jugar</a>
+        <a class="nav-link" href="contacto.html">Contacto</a>
+    </nav>
+</header>
+<main>
+    <form class="formularioContacto" id="formularioContacto" novalidate>
+        <label for="nombreContacto">Nombre:</label>
+        <input type="text" id="nombreContacto">
+        <span class="errorFormulario" id="errorNombre"></span>
+        
+        <label for="emailContacto">Email:</label>
+        <input type="text" id="emailContacto">
+        <span class="errorFormulario" id="errorEmail"></span>
+
+        <label for="mensajeContacto">Mensaje:</label>
+        <textarea id="mensajeContacto"></textarea>
+        <span class="errorFormulario" id="errorMensaje"></span>
+
+        <button type="submit">Enviar</button>    
+    </form>
+</main>
+
+<script src="js/contacto.js"></script>
+</body>
+</html>

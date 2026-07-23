@@ -57,6 +57,21 @@ button {
     padding: 1rem;
 }
 
+.formularioContacto{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+    padding: 1rem;
+    max-width: 28rem;
+}
+
+.errorFormulario{
+    font-size: 0.75rem;
+    color: var(--color-peligro);
+    min-height: 1rem;
+}
+
 .juego{
     display: flex;
     flex-direction: column;
@@ -183,3 +198,5 @@ button {
 .oculto {
     display: none;
 }
+
+

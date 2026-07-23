@@ -14,13 +14,14 @@ var intentosRestantes;
 var elementoContador;
 var elementoCronometro;
 var horaInicio;
-var idIntervaloCronometro;
+var idIntervaloCronometro = null;
 var inputBusqueda;
 var listaSugerencias;
 var idTimeoutBusqueda = null;
 var ultimasSugerencias = [];
 var tableroIntentos;
 var intentosHechos = [];
+var btnReiniciar;
 
 function formatearTiempo(segundosTotales) {
     var minutos;
@@ -52,6 +53,8 @@ function mostrarModal(titulo, mensaje) {
 function ocultarModal() {
     modalOverlay.classList.add("oculto");
 }
+
+
 
 function getJugadorSecreto(jugador) {
     jugadorSecreto = jugador;
@@ -234,6 +237,23 @@ function registrarIntento(jugadorElegido) {
     }
 }
 
+function reiniciarEstadoPartida() {
+    if (idIntervaloCronometro !== null) {
+        clearInterval(idIntervaloCronometro);
+    }
+    tableroIntentos.textContent = "";
+    intentosHechos = [];
+    intentosRestantes = 8;
+    actualizarContador();
+    inputBusqueda.value = "";
+    listaSugerencias.classList.add("oculto");
+}
+
+function clickReiniciar() {
+    reiniciarEstadoPartida();
+    pedirJugadorAleatorio(getJugadorSecreto, fallaConexion);
+}
+
 
 
 function iniciarApp() {
@@ -255,7 +275,8 @@ function iniciarApp() {
     inputBusqueda.addEventListener("input", manejarEscrituraBusqueda);
     listaSugerencias.addEventListener("click", manejarClickSugerencia);
     tableroIntentos = document.getElementById("tableroIntentos");
-    
+    btnReiniciar = document.getElementById("btnReiniciar");
+    btnReiniciar.addEventListener("click", clickReiniciar);
 }
 
 document.addEventListener("DOMContentLoaded", iniciarApp);
