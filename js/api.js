@@ -16,3 +16,13 @@ function pedirJugadorAleatorio(onExito, onError) {
         .then(onExito)
         .catch(onError);
 }
+
+
+function pedirSugerencias(consulta, onExito, onError) {
+    var url;
+    url = API_BASE_URL + "/api/players/search?q=" + encodeURIComponent(consulta) + "&limit=8";
+    fetch(url)
+        .then(manejarRespuestaFetch)
+        .then(onExito)
+        .catch(onError);
+}
