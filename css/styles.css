@@ -18,6 +18,14 @@ body {
     min-height: 100vh;
 }
 
+footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: end;
+
+}
+
 input, select {
     padding: 0.5rem;
     border: 1px solid var(--color-texto);
