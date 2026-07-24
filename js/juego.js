@@ -22,6 +22,9 @@ var ultimasSugerencias = [];
 var tableroIntentos;
 var intentosHechos = [];
 var btnReiniciar;
+var dificultadElegida;
+var fotoSecreta;
+
 
 function formatearTiempo(segundosTotales) {
     var minutos;
@@ -54,7 +57,20 @@ function ocultarModal() {
     modalOverlay.classList.add("oculto");
 }
 
+function configurarPistaDificultad() {
+    if (dificultadElegida === "facil") {
+        fotoSecreta.src = jugadorSecreto.photo;
+        fotoSecreta.className = "fotoSecreta blur8";
+    } else {
+        fotoSecreta.classList.add("oculto");
+    }
+}
 
+function actualizarPistaFoto() {
+    if (dificultadElegida === "facil") {
+        fotoSecreta.className = "fotoSecreta blur" + intentosRestantes;
+    }
+}
 
 function getJugadorSecreto(jugador) {
     jugadorSecreto = jugador;
@@ -64,11 +80,13 @@ function getJugadorSecreto(jugador) {
     actualizarContador();
     horaInicio = new Date().getTime();
     idIntervaloCronometro = setInterval(actualizarCronometro, 1000);
+    configurarPistaDificultad();
 }
 
 function fallaConexion(error) {
     mostrarModal("Error de conexión", "No se pudo conectar con el servidor. Intentá nuevamente en unos segundos.");
 }
+
 function clickComenzar() {
     var nombreIngresado;
     nombreIngresado = inputNombre.value.trim();
@@ -76,8 +94,10 @@ function clickComenzar() {
         mostrarModal("Nombre inválido", "Ingresá un nombre de al menos 3 letras para comenzar.");
         return;
     }
+    dificultadElegida = selectDificultad.value;
     pedirJugadorAleatorio(getJugadorSecreto, fallaConexion);
 }
+
 
 function mostrarSugerencias(jugadores) {
     var i;
@@ -226,6 +246,7 @@ function registrarIntento(jugadorElegido) {
     tableroIntentos.appendChild(fila);
     intentosRestantes = intentosRestantes - 1;
     actualizarContador();
+    actualizarPistaFoto();
     inputBusqueda.value = "";
     listaSugerencias.classList.add("oculto");
     if (resultado.nombre === "coincide") {
@@ -235,6 +256,7 @@ function registrarIntento(jugadorElegido) {
     if (intentosRestantes === 0) {
         mostrarModal("Perdiste", "El jugador secreto era: " + jugadorSecreto.name);
     }
+    
 }
 
 function reiniciarEstadoPartida() {
@@ -277,6 +299,7 @@ function iniciarApp() {
     tableroIntentos = document.getElementById("tableroIntentos");
     btnReiniciar = document.getElementById("btnReiniciar");
     btnReiniciar.addEventListener("click", clickReiniciar);
+    fotoSecreta = document.getElementById("fotoSecreta");
 }
 
 document.addEventListener("DOMContentLoaded", iniciarApp);

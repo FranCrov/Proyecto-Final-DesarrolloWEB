@@ -55,6 +55,25 @@ button {
 }
 
 
+.fotoSecreta {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
+    transition: filter 0.4s ease;
+}
+
+.blur8 { filter: blur(16px); }
+.blur7 { filter: blur(14px); }
+.blur6 { filter: blur(12px); }
+.blur5 { filter: blur(10px); }
+.blur4 { filter: blur(8px); }
+.blur3 { filter: blur(6px); }
+.blur2 { filter: blur(4px); }
+.blur1 { filter: blur(2px); }
+.blur0 { filter: blur(0); }
+
 .header {
     display: flex;
     flex-direction: row;
