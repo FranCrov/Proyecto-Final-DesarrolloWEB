@@ -1,9 +1,12 @@
 :root {
     --color-primario: #1e824c;
+    --color-primario-oscuro: #145c34;
     --color-texto: #1a1a1a;
     --color-texto-claro: #ffffff;
     --color-peligro: #d42511;
     --color-neutro: #7f8c8d;
+    --color-fondo: #f4f6f5;
+    --color-superficie: #ffffff;
 }
 
 main {
@@ -16,6 +19,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);  
+}
+
+body.modoOscuro{
+    --color-primario: #1e824c;
+    --color-texto: #f0f0f0;
+    --color-texto-claro: #191818;
+    --color-neutro: #566573;
+    --color-fondo: #262323;
 }
 
 footer{
